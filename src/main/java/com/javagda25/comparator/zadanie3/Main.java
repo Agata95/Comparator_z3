@@ -15,6 +15,8 @@ package com.javagda25.comparator.zadanie3;
 // byłaby pierwsza.
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -24,11 +26,42 @@ public class Main {
         druzynaPilkarskas.add(new DruzynaPilkarska("AAA", 13, 12,
                 4, 2, 6, 50));
         druzynaPilkarskas.add(new DruzynaPilkarska("BBB", 13, 12,
-                5, 1, 5, 76));
-        druzynaPilkarskas.add(new DruzynaPilkarska("CCC", 13, 12,
-                2, 3, 7, 47));
-        druzynaPilkarskas.add(new DruzynaPilkarska("DDD", 13, 12,
-                5, 2, 1, 67));
+                5, 1, 5, 50));
+        druzynaPilkarskas.add(new DruzynaPilkarska("CCC", 13, 14,
+                2, 3, 5, 47));
+        druzynaPilkarskas.add(new DruzynaPilkarska("DDD", 12, 12,
+                5, 2, 1, 47));
+
+        Collections.sort(druzynaPilkarskas, new Comparator<DruzynaPilkarska>() {
+            @Override
+            public int compare(DruzynaPilkarska o1, DruzynaPilkarska o2) {
+                if (o1.getLiczba_punktow() > o2.getLiczba_punktow()) {
+                    return 1;
+                } else if (o1.getLiczba_punktow() < o2.getLiczba_punktow()) {
+                    return -1;
+                }
+
+                // jeżeli to nie wyłoni nam zwycięscy to:
+                if (o1.getBramki_trafione() > o2.getBramki_trafione()) {
+                    return 1;
+                } else if (o1.getBramki_trafione() < o2.getBramki_trafione()) {
+                    return -1;
+                }
+
+                // jeżeli to nie wyłoni nam zwycięscy to:
+                if (o1.getBramki_stracone() > o2.getBramki_stracone()) {
+                    return 1;
+                } else if (o1.getBramki_stracone() < o2.getBramki_stracone()) {
+                    return -1;
+                }
+
+                // jeżeli to nie wyłoni nam zwycięscy to:
+                return o1.getNazwa_druzyny().compareTo(o2.getNazwa_druzyny()); // równe == 0
+            }
+
+        });
+
+//        druzynaPilkarskas
 
 
     }
