@@ -20,5 +20,16 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<DruzynaPilkarska> druzynaPilkarskas = new ArrayList<>();
+
+        druzynaPilkarskas.add(new DruzynaPilkarska("AAA", 13, 12,
+                4, 2, 6, 50));
+        druzynaPilkarskas.add(new DruzynaPilkarska("BBB", 13, 12,
+                5, 1, 5, 76));
+        druzynaPilkarskas.add(new DruzynaPilkarska("CCC", 13, 12,
+                2, 3, 7, 47));
+        druzynaPilkarskas.add(new DruzynaPilkarska("DDD", 13, 12,
+                5, 2, 1, 67));
+
+
     }
 }
