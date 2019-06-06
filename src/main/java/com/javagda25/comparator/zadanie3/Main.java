@@ -61,7 +61,7 @@ public class Main {
 
         });
 
-//        druzynaPilkarskas
+        System.out.println(druzynaPilkarskas);
 
 
     }
